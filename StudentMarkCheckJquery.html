@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+
+<body>
+    <script>
+
+        function number(sub1) {
+
+            const total = sub1.value;
+
+            if (90 <= total && total <= 100) {
+                document.form1.result.value = "Excellent";
+
+            }
+
+            else {
+                if (70 <= total && total <= 89) {
+                    document.form1.result.value = "Okay";
+                }
+                else {
+
+                    if (50 <= total && total <= 69) {
+                        document.form1.result.value = "Improve";
+                    }
+                    else {
+                        document.form1.result.value = "Bad";
+                    }
+
+                }
+            }
+        }
+
+
+        function number1(subm) {
+
+            const total1 = sub2.value;
+
+            if (90 <= total1 && total1 <= 100) {
+                document.form1.result1.value = "Excellent";
+
+            }
+
+            else {
+                if (70 <= total1 && total1 <= 89) {
+                    document.form1.result1.value = "Okay";
+                }
+                else {
+
+                    if (50 <= total1 && total1 <= 69) {
+                        document.form1.result1.value = "Improve";
+                    }
+                    else {
+                        document.form1.result1.value = "Bad";
+                    }
+
+                }
+            }
+        }
+
+
+    </script>
+
+
+    <form name="form1">
+
+        <div class="col-md-8" style="margin-left: 200px;">
+
+            <div>
+                <label for="fname" class="form-label">Student Name </label>
+                <input class="form-control" id="fname" type="text" placeholder="Student Name">
+            </div>
+
+            <div>
+                <label for="fresgisterno" class="form-label"> Register No </label>
+                <input class="form-control" id="fresgisterno" type="text" placeholder=" Register No ">
+            </div>
+
+            <div>
+                <label for="fage" class="form-label">Age </label>
+                <input class="form-control" id="fage" type="number" placeholder="Age" min="15" max="25">
+            </div>
+
+            <div>
+                <label for="sub1" class="form-label"> English </label>
+                <input class="form-control" id="sub1" type="text" onchange="number(sub1)" placeholder="English mark" min="1" max="100">
+                <br />
+                <input type="text" name="result" placeholder="0" disabled style="text-align: center;">
+            </div>
+
+            <div>
+                <label for="sub2" class="form-label">Maths</label>
+                <input class="form-control" id="sub2" type="text" onchange="number1(sub2)" placeholder="Maths mark" min="1" max="100">
+                <br />
+                <input type="text" name="result1" placeholder="0" disabled style="text-align: center">
+            </div>
+            
+            <div>
+                <br/>
+                <button type="submit" form="form1" value="Submit">Submit</button>
+            </div>
+
+        </div>
+
+    </form>
+</body>
+
+</html>

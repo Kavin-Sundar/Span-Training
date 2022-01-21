@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <style>
+              .container{
+  border-radius: 5px;
+  background-color: blanchedalmond;
+  padding: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  
+}
+input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid red;
+  border-radius: 10px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+#button{
+    cursor: pointer;
+    background-color: seagreen;
+}
+table, td, th {
+  border: 1px solid black;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th {
+  height: 50px;
+}
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <label for="fname">Full Name </label>
+        <input type="text" id="fname" name="fname" placeholder="fname">
+
+        <label for="age"> Age </label>
+        <input type="number" id="age" onchange="number(age)" placeholder="Age"  name="age">
+
+        <label for="Phone">Phone Number</label>
+        <input type="text" id="Phone" name="Phone" placeholder="Phone Number" maxlength="10">
+
+        <label for="Address">Address</label>
+        <input type="text" id="Address" name="Address" placeholder="Address">
+
+       
+
+        <input type="button" id="button" onclick="AddRow()"  value="Add">
+
+
+
+    </div>
+
+    <table id="show">
+        <tr>
+            <th>FullName</th>
+            <th>Age</th>
+            <th>Phone Number</th>
+            <th>Address</th>
+          
+         
+        </tr>
+
+    </table>
+
+    <script>
+        var list1 = [];
+		var list2 = [];
+		var list3 = [];
+		var list4 = [];
+       
+
+		var n = 1;
+		var x = 0;
+
+        function number(age){
+
+            const total = age.value;
+            var ret=5;
+             let ttt=4;
+            if(total < 18)
+            {
+                ret=6;
+                ttt=29;
+                alert(ttt);
+            }
+        }
+
+		function AddRow(){
+
+			var AddRown = document.getElementById('show');
+			var NewRow = AddRown.insertRow(0);
+
+			list1[x] = document.getElementById("fname").value;
+			list2[x] = document.getElementById("age").value;
+			list3[x] = document.getElementById("Phone").value;
+			list4[x] = document.getElementById("Address").value;
+          
+
+			var cel1 = NewRow.insertCell(0);
+			var cel2 = NewRow.insertCell(1);
+			var cel3 = NewRow.insertCell(2);
+			var cel4 = NewRow.insertCell(3);
+       
+			cel1.innerHTML = list1[x];
+			cel2.innerHTML = list2[x];
+			cel3.innerHTML = list3[x];
+			cel4.innerHTML = list4[x];
+           
+
+			//n++;
+			x++;
+		}
+        
+
+    </script>
+
+</body>
+
+</html>
